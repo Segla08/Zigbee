@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "976927326454",
+    "project_id": "segla-fb81fg",
+    "storage_bucket": "segla-fb81fg.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:976927326454:android:f44ef5604bc0ffd0a3ecd7",
+        "android_client_info": {
+          "package_name": "www.segla.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "976927326454-7294ge4324ti8gv6n2d0lksldld96cnl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWfKa7f8BNggaAMGdjjht2ESRM2VDpy4A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "976927326454-7294ge4324ti8gv6n2d0lksldld96cnl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "976927326454-29q694lhmcbmo9abbe2olrjdqqru52ec.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "www.segla.com"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
