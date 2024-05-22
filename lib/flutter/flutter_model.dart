@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'gateway_widget.dart' show GatewayWidget;
+import 'flutter_widget.dart' show FlutterWidget;
 import 'package:flutter/material.dart';
 
-class GatewayModel extends FlutterFlowModel<GatewayWidget> {
+class FlutterModel extends FlutterFlowModel<FlutterWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

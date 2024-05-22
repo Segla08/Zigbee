@@ -208,6 +208,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Bluetooth_demo',
           path: '/bluetoothDemo',
           builder: (context, params) => const BluetoothDemoWidget(),
+        ),
+        FFRoute(
+          name: 'Flutter',
+          path: '/flutter',
+          builder: (context, params) => const FlutterWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
