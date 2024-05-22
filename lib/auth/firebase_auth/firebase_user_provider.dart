@@ -5,8 +5,8 @@ import '../base_auth_user_provider.dart';
 
 export '../base_auth_user_provider.dart';
 
-class LachiaveFirebaseUser extends BaseAuthUser {
-  LachiaveFirebaseUser(this.user);
+class SeglaFirebaseUser extends BaseAuthUser {
+  SeglaFirebaseUser(this.user);
   User? user;
   @override
   bool get loggedIn => user != null;
@@ -54,18 +54,17 @@ class LachiaveFirebaseUser extends BaseAuthUser {
 
   static BaseAuthUser fromUserCredential(UserCredential userCredential) =>
       fromFirebaseUser(userCredential.user);
-  static BaseAuthUser fromFirebaseUser(User? user) =>
-      LachiaveFirebaseUser(user);
+  static BaseAuthUser fromFirebaseUser(User? user) => SeglaFirebaseUser(user);
 }
 
-Stream<BaseAuthUser> lachiaveFirebaseUserStream() => FirebaseAuth.instance
+Stream<BaseAuthUser> seglaFirebaseUserStream() => FirebaseAuth.instance
         .authStateChanges()
         .debounce((user) => user == null && !loggedIn
             ? TimerStream(true, const Duration(seconds: 1))
             : Stream.value(user))
         .map<BaseAuthUser>(
       (user) {
-        currentUser = LachiaveFirebaseUser(user);
+        currentUser = SeglaFirebaseUser(user);
         return currentUser!;
       },
     );

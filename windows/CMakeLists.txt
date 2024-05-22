@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
-project(lachiave LANGUAGES CXX)
+project(segla LANGUAGES CXX)
 
-set(BINARY_NAME "lachiave")
+set(BINARY_NAME "segla")
 
 cmake_policy(SET CMP0063 NEW)
 

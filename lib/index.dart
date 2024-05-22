@@ -38,4 +38,3 @@ export '/idiomas/idiomas/idiomas_widget.dart' show IdiomasWidget;
 export '/servicios/servicios/servicios_widget.dart' show ServiciosWidget;
 export '/acerca_de/acerca_de/acerca_de_widget.dart' show AcercaDeWidget;
 export '/bluetooth_demo/bluetooth_demo_widget.dart' show BluetoothDemoWidget;
-export '/zigbee/zigbee_widget.dart' show ZigbeeWidget;

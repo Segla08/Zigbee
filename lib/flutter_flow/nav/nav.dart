@@ -208,11 +208,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Bluetooth_demo',
           path: '/bluetoothDemo',
           builder: (context, params) => const BluetoothDemoWidget(),
-        ),
-        FFRoute(
-          name: 'zigbee',
-          path: '/zigbee',
-          builder: (context, params) => const ZigbeeWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

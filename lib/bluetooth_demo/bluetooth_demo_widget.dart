@@ -114,23 +114,9 @@ class _BluetoothDemoWidgetState extends State<BluetoothDemoWidget> {
                 endIndent: 10.0,
                 color: FlutterFlowTheme.of(context).accent4,
               ),
-              Row(
+              const Row(
                 mainAxisSize: MainAxisSize.max,
-                children: [
-                  Expanded(
-                    child: Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
-                      child: Container(
-                        height: 70.0,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
+                children: [],
               ),
             ],
           ),

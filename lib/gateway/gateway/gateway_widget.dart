@@ -1,7 +1,9 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'gateway_model.dart';
 export 'gateway_model.dart';
 
@@ -21,6 +23,11 @@ class _GatewayWidgetState extends State<GatewayWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => GatewayModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.apiResultx2t = await ListaPuertaEnlaceGatewayCall.call();
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -53,59 +60,78 @@ class _GatewayWidgetState extends State<GatewayWidget> {
               ).image,
             ),
           ),
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    FlutterFlowIconButton(
-                      borderWidth: 1.0,
-                      buttonSize: 60.0,
-                      icon: Icon(
-                        Icons.arrow_back_rounded,
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
-                        size: 40.0,
+          child: InkWell(
+            splashColor: Colors.transparent,
+            focusColor: Colors.transparent,
+            hoverColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            onTap: () async {},
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      FlutterFlowIconButton(
+                        borderWidth: 1.0,
+                        buttonSize: 60.0,
+                        icon: Icon(
+                          Icons.arrow_back_rounded,
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                          size: 40.0,
+                        ),
+                        onPressed: () async {
+                          context.pushNamed('My_dashboard');
+                        },
                       ),
-                      onPressed: () async {
-                        context.pushNamed('My_dashboard');
-                      },
-                    ),
-                    Expanded(
-                      child: Align(
-                        alignment: const AlignmentDirectional(0.0, -1.0),
-                        child: Text(
-                          'Gateway',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Manrope',
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    fontSize: 30.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w800,
-                                  ),
+                      Expanded(
+                        child: Align(
+                          alignment: const AlignmentDirectional(0.0, -1.0),
+                          child: Text(
+                            'Gateway',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Manrope',
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  fontSize: 30.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w800,
+                                ),
+                          ),
                         ),
                       ),
-                    ),
-                    FlutterFlowIconButton(
-                      borderWidth: 1.0,
-                      buttonSize: 60.0,
-                      icon: Icon(
-                        Icons.add,
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
-                        size: 40.0,
+                      FlutterFlowIconButton(
+                        borderWidth: 1.0,
+                        buttonSize: 60.0,
+                        icon: Icon(
+                          Icons.add,
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                          size: 40.0,
+                        ),
+                        onPressed: () async {
+                          context.pushNamed('Tipo_de_Gateway');
+                        },
                       ),
-                      onPressed: () async {
-                        context.pushNamed('Tipo_de_Gateway');
-                      },
+                    ],
+                  ),
+                ),
+                const Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [],
                     ),
                   ],
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

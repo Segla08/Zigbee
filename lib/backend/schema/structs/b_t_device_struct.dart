@@ -11,7 +11,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 class BTDeviceStruct extends FFFirebaseStruct {
   BTDeviceStruct({
     String? name,
-    String? id,
+    int? id,
     int? rssi,
     FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _name = name,
@@ -25,10 +25,11 @@ class BTDeviceStruct extends FFFirebaseStruct {
   set name(String? val) => _name = val;
   bool hasName() => _name != null;
 
-  // "id" field.
-  String? _id;
-  String get id => _id ?? '';
-  set id(String? val) => _id = val;
+  // "Id" field.
+  int? _id;
+  int get id => _id ?? 0;
+  set id(int? val) => _id = val;
+  void incrementId(int amount) => _id = id + amount;
   bool hasId() => _id != null;
 
   // "rssi" field.
@@ -40,7 +41,7 @@ class BTDeviceStruct extends FFFirebaseStruct {
 
   static BTDeviceStruct fromMap(Map<String, dynamic> data) => BTDeviceStruct(
         name: data['Name'] as String?,
-        id: data['id'] as String?,
+        id: castToType<int>(data['Id']),
         rssi: castToType<int>(data['rssi']),
       );
 
@@ -49,7 +50,7 @@ class BTDeviceStruct extends FFFirebaseStruct {
 
   Map<String, dynamic> toMap() => {
         'Name': _name,
-        'id': _id,
+        'Id': _id,
         'rssi': _rssi,
       }.withoutNulls;
 
@@ -59,9 +60,9 @@ class BTDeviceStruct extends FFFirebaseStruct {
           _name,
           ParamType.String,
         ),
-        'id': serializeParam(
+        'Id': serializeParam(
           _id,
-          ParamType.String,
+          ParamType.int,
         ),
         'rssi': serializeParam(
           _rssi,
@@ -77,8 +78,8 @@ class BTDeviceStruct extends FFFirebaseStruct {
           false,
         ),
         id: deserializeParam(
-          data['id'],
-          ParamType.String,
+          data['Id'],
+          ParamType.int,
           false,
         ),
         rssi: deserializeParam(
@@ -105,7 +106,7 @@ class BTDeviceStruct extends FFFirebaseStruct {
 
 BTDeviceStruct createBTDeviceStruct({
   String? name,
-  String? id,
+  int? id,
   int? rssi,
   Map<String, dynamic> fieldValues = const {},
   bool clearUnsetFields = true,
